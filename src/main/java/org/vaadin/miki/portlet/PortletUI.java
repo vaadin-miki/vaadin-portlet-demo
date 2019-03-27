@@ -1,17 +1,22 @@
 package org.vaadin.miki.portlet;
 
-import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.webcomponent.WebComponentUI;
 import com.vaadin.flow.router.Route;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author miki
  * @since 2019-02-08
  */
 @Route("")
-public class PortletUI extends UI {
+public class PortletUI extends WebComponentUI {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PortletUI.class);
 
     public PortletUI() {
         super();
@@ -28,5 +33,11 @@ public class PortletUI extends UI {
             ));
 
         this.add(field, button, label);
+    }
+
+    @Override
+    protected void onAttach(AttachEvent attachEvent) {
+        LOGGER.warn("ui has been attached");
+        this.getPage().executeJavaScript("window.alert('hi');");
     }
 }
