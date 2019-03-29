@@ -4,7 +4,6 @@ import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.component.webcomponent.WebComponentUI;
 import com.vaadin.flow.router.Route;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,7 @@ import org.slf4j.LoggerFactory;
  * @since 2019-02-08
  */
 @Route("")
-public class PortletUI extends WebComponentUI {
+public class PortletUI extends com.vaadin.flow.portlet.PortletUI {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PortletUI.class);
 
@@ -40,4 +39,6 @@ public class PortletUI extends WebComponentUI {
         LOGGER.warn("ui has been attached");
         this.getPage().executeJavaScript("window.alert('hi');");
     }
+
+
 }
