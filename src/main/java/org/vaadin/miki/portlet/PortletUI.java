@@ -1,6 +1,5 @@
 package org.vaadin.miki.portlet;
 
-import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.textfield.TextField;
@@ -33,12 +32,5 @@ public class PortletUI extends com.vaadin.flow.portlet.PortletUI {
 
         this.add(field, button, label);
     }
-
-    @Override
-    protected void onAttach(AttachEvent attachEvent) {
-        LOGGER.warn("ui has been attached");
-        this.getPage().executeJavaScript("window.alert('hi');");
-    }
-
 
 }
