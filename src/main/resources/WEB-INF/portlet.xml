@@ -19,7 +19,7 @@
             <name>UI</name>
 
             <!-- The application class with package name. -->
-            <value>org.vaadin.miki.portal.PortletUI</value>
+            <value>org.vaadin.miki.portlet.PortletUI</value>
         </init-param>
 
         <!-- Supported portlet modes and content types. -->
